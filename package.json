@@ -1,0 +1,35 @@
+{
+  "name": "npm-build-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint:js": "eslint js || true",
+    "serve": "browser-sync start --config bs-config.js --directory",
+    "server-reload": "browser-sync reload",
+    "build:js": "run-s lint:js",
+    "build": "run-s build:*",
+    "watch:js": "onchange \"js\" -- run-s lint:js",
+    "start": "run-p serve watch:*",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/poohding/npm-build-boilerplate.git"
+  },
+  "author": "poohding",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/poohding/npm-build-boilerplate/issues"
+  },
+  "homepage": "https://github.com/poohding/npm-build-boilerplate#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "eslint": "^4.11.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "npm-run-all": "^4.1.2",
+    "onchange": "^3.2.1",
+    "rimraf": "^2.6.2"
+  }
+}
